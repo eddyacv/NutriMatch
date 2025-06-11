@@ -31,9 +31,12 @@ export default function Carousel_8() {
   const visibleItems = getVisibleItems();
 
   return (
-    <div className="flex flex-col items-center px-4 sm:px-8 md:px-12 py-12">
+    <div
+      id="carousel8"
+      className="flex flex-col items-center px-4 sm:px-8 md:px-12 py-12 scroll-mt-24"
+    >
       {/* 🔹 TÍTULO */}
-      <div className="w-full mb-10 text-center scroll-mt-24" id="carousel">
+      <div className="w-full mb-10 text-center">
         <h2 className="text-4xl font-bold">Interfaces 8 Locos</h2>
       </div>
 
@@ -53,7 +56,7 @@ export default function Carousel_8() {
             const isCenter = i === 1;
             return (
               <div
-                key={`${item}-${startIndex}`} // 🔑 fuerza re-render y animación
+                key={`${item}-${startIndex}`}
                 className={`
                   ${isCenter ? "h-full z-10 scale-100 opacity-100" : "h-[70%] scale-90 opacity-70"}
                   w-auto aspect-[9/16]
