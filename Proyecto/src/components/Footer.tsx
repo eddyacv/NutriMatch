@@ -53,15 +53,15 @@ const Footer = () => {
             <div className="space-y-3 text-gray-400">
               <div className="flex items-center space-x-3">
                 <Mail className="w-4 h-4" />
-                <span>hola@nutrimatch.pe</span>
+                <span>custom@nutrimatch.pe</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="w-4 h-4" />
-                <span>+51 999 123 456</span>
+                <span>+51 937 288 040</span>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="w-4 h-4" />
-                <span>Lima, Perú</span>
+                <span>Trujillo, Perú</span>
               </div>
             </div>
             
