@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 
 const items = [
-  "/images/1.png",
-  "/images/2.png",
-  "/images/3.png",
-  "/images/4.png",
-  "/images/5.png",
-  "/images/6.png",
-  "/images/7.png",
-  "/images/8.png",
+  "https://i.postimg.cc/SNyG8JB4/1.png",
+  "https://i.postimg.cc/BZ5gXxwN/2.png",
+  "https://i.postimg.cc/qqGXSTCW/3.png",
+  "https://i.postimg.cc/J4P5QR8k/4.png",
+  "https://i.postimg.cc/bJkR0bYy/5.png",
+  "https://i.postimg.cc/5tHg0TZF/6.png",
+  "https://i.postimg.cc/XvT8yxb1/7.png",
+  "https://i.postimg.cc/rsTNfmzS/8.png",
 ];
 
 export default function Carousel_8() {

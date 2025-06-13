@@ -58,7 +58,7 @@ const HeroSection = () => {
           {/* Lado derecho: Imagen en lugar del cuadro */}
 <div className="w-full flex justify-center items-center lg:ml-0 animate-slide-in-right">
 <img 
-  src="/images/Phone.png" 
+  src="https://i.postimg.cc/t4vD9pmj/Phone.png" 
   alt="Mockup del plan personalizado"
   className="scale-[1.5] mx-auto drop-shadow-2xl rounded-2xl"
 />
