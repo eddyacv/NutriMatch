@@ -1,87 +1,100 @@
-import React, { useState } from "react";
+import React from "react";
 
 const items = [
-  "https://i.postimg.cc/SNyG8JB4/1.png",
-  "https://i.postimg.cc/BZ5gXxwN/2.png",
-  "https://i.postimg.cc/qqGXSTCW/3.png",
-  "https://i.postimg.cc/J4P5QR8k/4.png",
-  "https://i.postimg.cc/bJkR0bYy/5.png",
-  "https://i.postimg.cc/5tHg0TZF/6.png",
-  "https://i.postimg.cc/XvT8yxb1/7.png",
-  "https://i.postimg.cc/rsTNfmzS/8.png",
+  {
+    link: "https://i.postimg.cc/wTHR88sb/P1.png",
+    titulo: "Título 1",
+    descripcion: "Descripción 1",
+  },
+  {
+    link: "https://i.postimg.cc/0Q4Nb4K2/P2.png",
+    titulo: "Título 2",
+    descripcion: "Descripción 2",
+  },
+  {
+    link: "https://i.postimg.cc/RVHWnvRr/P3.png",
+    titulo: "Título 3",
+    descripcion: "Descripción 3",
+  },
+  {
+    link: "https://i.postimg.cc/Hnj7N5Xj/P4.png",
+    titulo: "Título 4",
+    descripcion: "Descripción 4",
+  },
+  {
+    link: "https://i.postimg.cc/rpSGGSNk/P5.png",
+    titulo: "Título 5",
+    descripcion: "Descripción 5",
+  },
+  {
+    link: "https://i.postimg.cc/HxwSLqhb/P6.png",
+    titulo: "Título 6",
+    descripcion: "Descripción 6",
+  },
+  {
+    link: "https://i.postimg.cc/ht3W0r68/P7.png",
+    titulo: "Título 7",
+    descripcion: "Descripción 7",
+  },
+  {
+    link: "https://i.postimg.cc/5NbV9j8z/P8.png",
+    titulo: "Título 8",
+    descripcion: "Descripción 8",
+  },
 ];
 
 export default function Carousel_8() {
-  const [startIndex, setStartIndex] = useState(0);
-
-  const getVisibleItems = () => [
-    items[startIndex % items.length],
-    items[(startIndex + 1) % items.length],
-    items[(startIndex + 2) % items.length],
-  ];
-
-  const handleNext = () => {
-    setStartIndex((prev) => (prev + 1) % items.length);
-  };
-
-  const handlePrev = () => {
-    setStartIndex((prev) => (prev - 1 + items.length) % items.length);
-  };
-
-  const visibleItems = getVisibleItems();
-
   return (
     <div
       id="carousel8"
       className="flex flex-col items-center px-4 sm:px-8 md:px-12 py-12 scroll-mt-24"
     >
-      {/* 🔹 TÍTULO */}
       <div className="w-full mb-10 text-center">
-        <h2 className="text-4xl font-bold">Interfaces 8 Locos</h2>
+        <h2 className="text-4xl font-bold">Vista</h2>
       </div>
 
-      {/* 🔸 CARRUSEL */}
-      <div className="flex items-center justify-center w-full max-w-[1200px] gap-6 max-h-[90vh] h-[80vh]">
-        {/* Flecha Izquierda */}
-        <button
-          onClick={handlePrev}
-          className="px-4 py-2 bg-orange-500 text-white rounded hover:bg-orange-600 transition"
-        >
-          {"<"}
-        </button>
+      <div className="flex flex-col gap-24 w-full max-w-6xl">
+        {items.map((item, index) => {
+          const isEven = index % 2 === 0;
 
-        {/* Contenedor de ítems */}
-        <div className="flex items-end justify-center gap-6 w-full h-full">
-          {visibleItems.map((item, i) => {
-            const isCenter = i === 1;
-            return (
-              <div
-                key={`${item}-${startIndex}`}
-                className={`
-                  ${isCenter ? "h-full z-10 scale-100 opacity-100" : "h-[70%] scale-90 opacity-70"}
-                  w-auto aspect-[9/16]
-                  transition-all duration-500 ease-in-out
-                  rounded-xl overflow-hidden shadow-lg bg-white
-                  flex items-center justify-center
-                `}
-              >
+          return (
+            <div
+              key={item.link}
+              className={`flex flex-col md:flex-row items-center gap-8 relative ${
+                !isEven ? "md:flex-row-reverse" : ""
+              }`}
+            >
+              {/* Imagen */}
+              <div className="w-full md:w-1/2 flex justify-center">
                 <img
-                  src={item}
-                  alt={`Interfaz ${startIndex + i + 1}`}
-                  className="w-full h-full object-contain rounded-xl animate-carousel-fade"
+                  src={item.link}
+                  alt={item.titulo}
+                  className="w-auto h-auto max-h-[80vh] object-contain transition-transform duration-300 ease-in-out hover:scale-105 hover:drop-shadow-lg"
                 />
               </div>
-            );
-          })}
-        </div>
 
-        {/* Flecha Derecha */}
-        <button
-          onClick={handleNext}
-          className="px-4 py-2 bg-orange-500 text-white rounded hover:bg-orange-600 transition"
-        >
-          {">"}
-        </button>
+
+              {/* Círculo con número centrado verticalmente */}
+              <div className="hidden md:flex items-center justify-center w-12 relative min-h-[80vh]">
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+                  <div className="w-10 h-10 rounded-full bg-white border-4 border-orange-500 flex items-center justify-center text-orange-500 font-bold text-lg shadow-md">
+                    {index + 1}
+                  </div>
+                </div>
+              </div>
+
+              {/* Texto */}
+              <div className="w-full md:w-1/2 flex items-center justify-center">
+                <div className="text-center">
+                  <h3 className="text-2xl font-bold text-orange-500 mb-4">
+                    {item.titulo}
+                  </h3>
+                  <p className="text-base text-gray-700">{item.descripcion}</p>
+                </div>
+              </div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
