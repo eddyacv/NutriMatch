@@ -3,7 +3,7 @@ import React from "react";
 const items = [
   {
     link: "https://i.postimg.cc/wTHR88sb/P1.png",
-    titulo: "Título 1",
+    titulo: "Título 12",
     descripcion: "Descripción 1",
   },
   {
