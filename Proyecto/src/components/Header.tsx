@@ -28,7 +28,7 @@ const Header = () => {
               Testimonios
             </a>
             <a href="#carousel8" className="text-gray-600 hover:text-orange-600 transition-colors">
-              Interfaces
+              Preview
               </a>
 
             <a href="#contacto" className="text-gray-600 hover:text-orange-600 transition-colors">
